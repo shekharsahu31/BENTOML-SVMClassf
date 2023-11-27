@@ -1,0 +1,49 @@
+https://www.youtube.com/watch?v=i_FtfdOKa2M&list=RDCMUCNU_lfiiWBdtULKOw6X0Dig&index=23
+
+
+python train.py - cmd  ### copy the model tag
+
+bentoml models list - cmd
+
+#### C:// - Users - Vipul sahu - bentoml - models - ...... - YAML file / Pickle file
+
+python test.py
+
+python service.py ----- ### optimise model inferecing
+
+bentoml serve service.py:svc --reload -> use to run service.py as an API or to make an API
+                                        reload is used so that it auto reloads/debugs on any changes
+                                        like in fast api app.runt(debug  =True)
+                                        service.py - file name  , svc - service name
+
+localhost:3000
+get - [[1,2,4,5]] - check for o/p
+
+WE can do same using JSON also -
+localhost:3000/classify or 127.0.0.1:3000/classify - POST request
+Body - Test-> JSON
+[[1,2,3,4]] -> SEND
+
+
+
+
+#bentofile.yaml - > to tell bentoml to package(entire application) all this so we can 
+                   easily deploy the things out in cloud.
+
+
+bentoml build - serach for yaml file , runs it , first try to create service
+                using service.py:svc and then look for other py files also (test.py is not that imp.)
+                and than look for packages and install packages too.
+
+we will get more options like to contanizer our application or upload out application
+to bentocloud.
+
+
+bentoml list - shows list of all bentoml applications build as a complete package.
+ this will be stored in C:// - Users -  shekhar - bentoml - bentos - .... - here you can see everything is there for a packaged application.
+
+ We have docker file created also so we can use that and make a docker image and push it to REPO. or using CI/CD github actions and AWS/Azure we can also deploy the application.
+
+
+
+ 

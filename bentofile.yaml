@@ -1,0 +1,10 @@
+service: "service.py:svc"
+labels:
+  owner: bentoml-shekhar
+  project: SVC Iris Prediction
+include:
+- "*.py"
+python:
+ packages:
+  - scikit-learn
+  - pandas
